@@ -1,31 +1,33 @@
-import datetime
 from pydantic import BaseModel, Field
-from functions import app
 from functions.functions import get_model_response
+from fastapi import FastAPI
+import uvicorn
 
+
+# Initialize FastAPI app
+app = FastAPI()
 
 model_name = "Heart Disease (Diagnostic)"
 version = "v1.0.0"
 
-
-# Input for data validation
+#Input data validation for the model
 class Input(BaseModel):
-    Smoking: str
-    AlcoholDrinking: str
-    Stroke: str
-    DiffWalking: str
-    Sex: str
-    AgeCategory: str
-    Diabetic: str
-    PhysicalActivity: str
-    GenHealth: str 
-    Asthma: str
-    KidneyDisease: str
-    SkinCancer: str
-    BMI: float 
-    PhysicalHealth: int
-    MentalHealth: int
-    SleepTime: int
+    Smoking: str = Field(..., description="Choose Yes/No")
+    AlcoholDrinking: str = Field(..., description="Choose Yes/No")
+    Stroke: str = Field(..., description="Choose Yes/No")
+    DiffWalking: str = Field(..., description="Choose Yes/No")
+    Sex: str = Field(..., description="Choose Female/Male")
+    AgeCategory: str = Field(..., description="Choose 18-24/25-29/30-34/35-39/40-44/45-49/50-54/55-59/60-64/65-69/70-74/75-79/80 or older")
+    Diabetic: str = Field(..., description="Choose Yes/No/No, borderline diabetes/Yes (during pregnancy)")
+    PhysicalActivity: str = Field(..., description="Choose Yes/No")
+    GenHealth: str = Field(..., description="Choose Excellent/Fair/Good/Poor/Very good")
+    Asthma: str = Field(..., description="Choose Yes/No")
+    KidneyDisease: str = Field(..., description="Choose Yes/No")
+    SkinCancer: str = Field(..., description="Choose Yes/No")
+    BMI: float = Field(..., gt=0)
+    PhysicalHealth: int = Field(..., gt=0, le=30)
+    MentalHealth: int = Field(..., gt=0, le=30)
+    SleepTime: int = Field(..., gt=0, le=24)
 
     class Config:
         schema_extra = {
@@ -50,7 +52,7 @@ class Input(BaseModel):
         }
 
 
-# Ouput for data validation
+# Ouput data validation
 class Output(BaseModel):
     label: str
     prediction: int
@@ -58,7 +60,7 @@ class Output(BaseModel):
 
 @app.get('/')
 async def model_info():
-    """Return model information, version, how to call"""
+    """Return model information"""
     return {
         "name": model_name,
         "version": version
@@ -75,6 +77,10 @@ async def service_health():
 
 @app.post('/predict', response_model=Output)
 async def model_predict(input: Input):
-    """Predict with input"""
+    """Return prediction given the input"""
     response = get_model_response(input)
     return response
+
+
+if __name__ == '__main__':
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)

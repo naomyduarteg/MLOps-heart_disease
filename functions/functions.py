@@ -1,6 +1,9 @@
 import pandas as pd
-from functions import model
+import joblib
 
+
+# Load model
+model = joblib.load('model_to_run/model.dat.gz')
 
 def predict(X, model):
     prediction = model.predict(X)[0]
@@ -13,7 +16,7 @@ def get_model_response(input):
     if prediction == 1:
         label = "Higher chances of heart disease"
     else:
-        label = "Low chances of heart disease"
+        label = "Lower chances of heart disease"
     return {
         'label': label,
         'prediction': int(prediction)
