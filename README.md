@@ -32,7 +32,7 @@ Structure of the project:
 </code>
 </pre>
 
-- In <a href="https://github.com/naomyduarteg/MLOps-heart_disease/tree/main/code">code</a>, we have the complete code where the dataset is analyzed and ML models are trained. The best one, which is Linear Regression, is choosen, trained and exported with joblib to be reproduced. 
+- In <a href="https://github.com/naomyduarteg/MLOps-heart_disease/tree/main/code">code</a>, we have the complete code where columns of the dataset are described, the dataset is analyzed and ML models are trained. The best one, which is Linear Regression, is choosen, trained and exported with joblib to be reproduced. 
 - In <a href="https://github.com/naomyduarteg/MLOps-heart_disease/tree/main/data">data</a>, we have the dataset used in this project.
 - In <a href="https://github.com/naomyduarteg/MLOps-heart_disease/tree/main/functions">functions</a>, we load the model using joblib and write the functions that will be used in the API to perform the predictions.
 - In <a href="https://github.com/naomyduarteg/MLOps-heart_disease/tree/main/model_to_run">model_to_run</a>, we have the compressed joblib file of the model.
