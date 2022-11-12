@@ -1,7 +1,7 @@
 # Heart Disease Machine Learning Model
 <img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/fastapi-109989?style=for-the-badge&logo=FASTAPI&logoColor=white"/> <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white"/>
 
-![machine-learning-linear-regression](https://user-images.githubusercontent.com/73078250/201482759-3f57b720-2d4b-4817-925c-ef350f182553.svg)
+![machine-learning-logistic-regression](https://user-images.githubusercontent.com/73078250/201484493-06ce7a2b-3ea1-4ae9-a561-518f722b7d0f.svg)
 
 The purpose of this project is to build a ML model with Python's scikit-learn, create an API with FastAPI and containerize with Docker.
 
