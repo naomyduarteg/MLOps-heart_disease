@@ -75,5 +75,16 @@ uvicorn main:app --reload
 From this point, one can use the Swagger documentation to test the API. 
 
 ## Docker 
+We can use the <a href="">Dockerfile</a> to create an image for running our application inside a container
+
+```
+docker build . -t MLOps-heart_disease
+```
+And to run
+
+```
+docker run -p 8000:8000 MLOps-heart_disease
+```
+
 
 If you want to know more about FastAPI and the machine learning methods and metrics used in this project, take a look <a href="https://medium.com/@naomy-gomes">here</a> at my Medium webpage.
