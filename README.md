@@ -38,4 +38,42 @@ Structure of the project:
 - In <a href="https://github.com/naomyduarteg/MLOps-heart_disease/tree/main/model_to_run">model_to_run</a>, we have the compressed joblib file of the model.
 - In <a href="https://github.com/naomyduarteg/MLOps-heart_disease/tree/main/model_to_run">main.py</a>, we have the main file where FastAPI is initialized, the classes for the input and output data are written using pydantic and the endpoints are written. 
 
+## Running the API
+
+1. Clone the repository
+
+```
+git@github.com:naomyduarteg/MLOps-heart_disease.git
+```
+2. Create a virtual environment
+
+```
+python3 -m venv <name_of_venv>
+```
+3. Go to the virtual environment's directory and activate it
+
+For Windows:
+```
+Scripts/activate
+```
+For Linux/Mac:
+```
+bin/activate
+```
+4. Install the requirements
+
+```
+pip install -r requirements.txt
+```
+
+6. Run the API with uvicorn
+
+```
+uvicorn main:app --reload
+```
+
+From this point, one can use the Swagger documentation to test the API. 
+
+## Docker 
+
 If you want to know more about FastAPI and the machine learning methods and metrics used in this project, take a look <a href="https://medium.com/@naomy-gomes">here</a> at my Medium webpage.
