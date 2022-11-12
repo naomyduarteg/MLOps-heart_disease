@@ -75,7 +75,7 @@ uvicorn main:app --reload
 From this point, one can use the Swagger documentation to test the API. 
 
 ## Docker 
-We can use the <a href="">Dockerfile</a> to create an image for running our application inside a container
+We can use the <a href="https://github.com/naomyduarteg/MLOps-heart_disease/blob/main/Dockerfile">Dockerfile</a> to create an image for running our application inside a container
 
 ```
 docker build . -t MLOps-heart_disease
