@@ -86,6 +86,6 @@ Start the Docker container based on the created image
 ```
 docker run -p 8000:8000 MLOps-heart_disease
 ```
-Now we have an API to predict heart disease deployed with Docker!
+Now we have an API to predict chances of heart disease deployed with Docker!
 
 If you want to know more about FastAPI and the machine learning methods and metrics used in this project, take a look <a href="https://medium.com/@naomy-gomes">here</a> at my Medium webpage.
