@@ -36,7 +36,7 @@ Structure of the project:
 - In <a href="https://github.com/naomyduarteg/MLOps-heart_disease/tree/main/data">data</a>, we have the dataset used in this project.
 - In <a href="https://github.com/naomyduarteg/MLOps-heart_disease/tree/main/functions">functions</a>, we load the model using joblib and write the functions that will be used in the API to perform the predictions.
 - In <a href="https://github.com/naomyduarteg/MLOps-heart_disease/tree/main/model_to_run">model_to_run</a>, we have the compressed joblib file of the model.
-- In <a href="https://github.com/naomyduarteg/MLOps-heart_disease/tree/main/model_to_run">main.py</a>, we have the main file where FastAPI is initialized, the classes for the input and output data are written using pydantic and the endpoints are written. 
+- In <a href="https://github.com/naomyduarteg/MLOps-heart_disease/tree/main/model_to_run">main</a>, we have the main file where FastAPI is initialized, the classes for the input and output data are written using pydantic and the endpoints are written. 
 
 ## Running the API
 
